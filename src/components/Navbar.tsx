@@ -5,9 +5,10 @@ import { Icons } from "./Icons";
 import NavItems from "./NavItems";
 import { buttonVariants } from "./ui/button";
 import { Cart } from "./Cart";
+import { getServerSideUSer } from "@/lib/payload.utils";
 
 const Navbar = () => {
-  const user = null;
+  const {} = await getServerSideUSer();
 
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">

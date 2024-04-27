@@ -1,7 +1,6 @@
 "use client";
 
 import { trpc } from "@/trpc/client";
-import { isError } from "@tanstack/react-query";
 import { Loader2, XCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +11,7 @@ interface VerifyEmailProps {
 }
 
 const VerifyEmail = ({ token }: VerifyEmailProps) => {
-  const { data, isLoading } = trpc.auth.verifyEmail.useQuery({
+  const { data, isLoading, isError } = trpc.auth.verifyEmail.useQuery({
     token,
   });
 
